@@ -1,0 +1,123 @@
+\section{UML Notation}
+\subsection{Klassendiagramm}
+Das statische Klassendiagramm beschreibt die Verbindungen zwischen einzelnen Klassen und Generalisierungen.
+\begin{center}
+	\includegraphics[width=\columnwidth]{Images/klassendiagramm}
+\end{center}
+
+\subsubsection{Klasse}
+Die Klasse ist eine Vorlage für ein beliebiges Objekt. Klassennamen sind Substantiv im Singular, das durch ein Adjektiv ergänzt werden kann.
+\begin{center}
+	\includegraphics[width=0.4\columnwidth]{Images/class}
+\end{center}
+\textbf{Attribute} sind wie folgt definiert:
+\begin{lstlisting}
+sichtbarkeit name: type ('{' Eigenschaft '}' | '=' Anfangswert | '[' Range ']')?
+\end{lstlisting}Sichtbarkeiten:
+\begin{itemize}[nosep]
+	\item + öffentlich
+	\item - privat
+	\item \# geschützt
+	\item / abgeleitet
+	\item \~\ Paket
+	\item * zufällig
+\end{itemize}~\\
+
+\subsubsection{Assoziation}
+Assoziationen verbinden Klassen miteinander.
+\begin{center}
+	\includegraphics[width=0.6\columnwidth]{Images/assoziation}
+\end{center}
+
+
+\textbf{Lesen}\\
+Verbindungen werden wie folgt gelesen:
+Artikel (1) hat beliebige (2) Auftragspositionen (3).\\
+\begin{center}
+	\includegraphics[width=0.8\columnwidth]{Images/lesen}
+\end{center}
+
+\textbf{Beispiel}\\
+\begin{center}
+	\includegraphics[width=0.6\columnwidth]{Images/assoziation2}
+\end{center}
+
+\textbf{Multiplizität}\\
+Zu einer Multiplizität kann auch ein Rollenname, welche die Assoziation beschreibt, hinzugefügt werden.
+\begin{center}
+	\includegraphics[width=0.6\columnwidth]{Images/multiplizität}
+\end{center}
+
+\textbf{Eigenschaften}\\
+\textit{ordered} oder \textit{subsets} können zusätzlich zu der Assozation hinzugefügt werden, um weitere Einschränkungen zu beschreiben\\
+
+\textbf{Assoziationsklasse}\\
+Eine Assoziationsklasse besitzt Eigenschaften einer Klasse. Im Design-Prozess muss diese meistens in eine Klasse transformiert werden.
+\includegraphics[width=\columnwidth]{Images/assoziationsklasse}\\
+
+\textbf{Abgeleitet Assoziation}\\
+Wenn Assoziationen doppelt vorhanden sind,  werden diese mit einem '/' gekennzeichnet.\\
+
+\textbf{Navigierbarkeit}\\
+\includegraphics[width=\columnwidth]{Images/navigierbarkeit}
+Instanz B erreichbar für Instanz A und Instanz D nicht erreichbar für Instanz C. Falls keine Navigierbarkeit benötigt wird, keine Notation.
+
+\textbf{Generalisierung}\\
+\begin{center}
+	\includegraphics[width=0.5\columnwidth]{Images/generalisierung}
+\end{center}
+
+
+\subsection{Use-Case}
+Use-Case beschreiben, was ein Akteur von einem System erwarten kann. 
+\begin{center}
+	\includegraphics[width=\columnwidth]{Images/usecase}
+\end{center}
+
+\subsubsection{Extension}
+\includegraphics[width=\columnwidth]{Images/extension}
+
+\subsection{Aktivitäten}
+Das Aktivitäten-Diagramm beschreibt den dynamischen Ablauf eines Prozesses.\\
+\includegraphics[width=\columnwidth]{Images/Aktivitätendiagramm}
+
+
+\subsubsection{Knoten}
+\includegraphics[width=0.6\columnwidth]{Images/knoten}
+
+\subsubsection{Splitting}
+Events welche unabhängig (Nebenläufig) ausgeführt werden können, können durch Splitting geteilt und zusammengeführt werden.\\
+\includegraphics[width=0.6\columnwidth]{Images/splitting}
+
+
+\subsubsection{Schwimmbahnen}
+Zu den Aktivitäten können zusätzliche Pakete (in c++ sind diese Namespaces) hinzugefügt werden.\\
+\includegraphics[width=\columnwidth]{Images/schwimmbahnen}
+
+\subsection{Szenario}
+Ein Szenario ist eine Sequenz von Verarbeitungsschritten, die unter bestimmten Bedingungen auszuführen ist. Im Gegensatz zu einem Use-Case, welche eine Sammlung von Szenarien ist, beschreibt das Szenario-Diagramm nur ein möglichen Fall.
+\includegraphics[width=\columnwidth]{Images/szenario}
+
+
+\subsection{Sequenzdiagramm}
+Sequenzdiagramm zeigt die Kommunikation zwischen mehreren Kommunikationspartnern, wobei jeder Parnter (Lebenslinie) durch Rechteck und vertikale gestrichelte Linie dargestellt wird. Das Diagramm besitzt zwei Dimensionen, Zeit vertikal, Kommunikationspartner Horizontal. Return-Werte können mit Pfeil oder mit Doppelpunkt Notation definiert werden.
+\includegraphics[width=\columnwidth]{Images/sequenzdiagramm}
+
+\subsubsection{Nachrichten}
+\includegraphics[width=\columnwidth]{Images/nachrichten}
+
+\subsection{Kommunikationsdiagramm}
+Ist gut geeignet, um das grundsätzliche Zusammenspiel mehrerer Partnern zu zeigen. Schleifen und Bedingungen können einfacher modelliert werden. Ist ähnlich zu Sequenzdiagramm, jedoch ist die Zeit nicht auf einer Achse fixiert.\\
+
+\includegraphics[width=\columnwidth]{Images/kommunikationsdiagramm}
+Wichtig ist, dass jeder Verlauf nummieriert ist. Wenn mehrer Verzweigungen möglich sind, etappe tiefer nummerieren.
+
+\subsection{Zustandsautomat}
+Jede Transition wird durch ein Ereignis ausgelöst.
+\includegraphics[width=\columnwidth]{Images/zustandautomat}
+
+\textbf{Aktivität}:\\ Es gibt \textit{entry}, \textit{exit} und \textit{do} Zustand.
+\includegraphics[width=0.4\columnwidth]{Images/aktivität}
+
+\textbf{Protokoll}\\ Ist einer Klasse zugeordnet. Es beschreibt welche Operationen in welchem Zustand aufgerufen werden dürfen.
+\includegraphics[width=\columnwidth]{Images/protokoll}
